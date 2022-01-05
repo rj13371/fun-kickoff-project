@@ -1,11 +1,11 @@
 ### What this PR does (required):
-- list PR functionality here
+- created model for profile schema with requirements and added optional properties based on what it looks like the profile model will need in the future
 
 ### Screenshots / Videos (front-end only):
 - Post at least one screenshot to show the feature in action. **Only required in front-end work**
 
 ### Any information needed to test this feature (required):
-- Post what steps to take to be able to test this feature (eg. "sign up as a new user and upload a profile picture from the navbar")
+- this feature cannot be tested until the routes and controllers for profile are created but once they are you can try with postman to send a POST or GET req based on the profile schemas properties.
 
 ### Any issues with the current functionality (optional):
 - List any problems where you were not able to complete all tasks on ticket
