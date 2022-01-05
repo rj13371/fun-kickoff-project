@@ -13,3 +13,14 @@ describe("profile GET route", function() {
   });
 
 });
+
+describe("ping for logout post request", function() {
+
+  var url = "http://localhost:3001/auth/logout/"
+
+  it("returns status 200", function() {
+    request.post(url, function(error, response, body) {
+      expect(response.statusCode).to.equal(200);
+    });
+  });        
+});
