@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --reporter spec",
+    "test": "mocha --timeout 10000",
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
