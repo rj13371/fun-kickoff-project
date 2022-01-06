@@ -2,7 +2,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const mongoose = require("mongoose");
 const User = require ('../models/User')
-const should = chai.should();
+const expect = chai.expect()
 var app = 'localhost:3001';
 
 chai.use(chaiHttp);
@@ -25,23 +25,28 @@ agent
 })
   .then(function (res) {
     expect(res).to.have.cookie('token');
-    return agent.post('/auth/login')
+     agent.post('/auth/login') //login with token
     .send({
         'email': `${testEmail}`,
         'password': 'tester'
     })
       .then(function (res) {
-          console.log(res)
-         expect(res).to.have.status(404);
+         expect(res).to.have.status(200);
       })
 
   })
   .then(function (res) {
     expect(res).to.have.cookie('token');
-    return agent.post('/auth/user')
+     agent.post('/auth/user') //hit user route
       .then(function (res) {
          expect(res).to.have.status(200);
-         agent.close()
+      })
+
+  })
+  .then(function (res) {
+     agent.post('/auth/logout') //logout and erase cookie
+      .then(function (res) {
+         expect(res.body).to.have.status(200);
       })
 
   });
