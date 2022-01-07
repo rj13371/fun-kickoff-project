@@ -6,15 +6,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
+  textField: {
+    '&.MuiTextField-root': {
+      marginBottom: theme.spacing(3),
+    },
+  },
   label: {
-    fontSize: 19,
-    color: 'rgb(0,0,0,0.4)',
-    paddingBottom: '10px',
+    marginTop: theme.spacing(-2),
+    marginLeft: theme.spacing(-2),
   },
   inputs: {
-    marginTop: '1rem',
-    height: '2rem',
-    padding: '5px',
+    padding: '1px',
   },
   forgot: {
     paddingRight: 10,

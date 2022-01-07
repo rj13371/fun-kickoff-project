@@ -53,15 +53,17 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
             id="email"
-            label={<Typography className={classes.label}>Email address</Typography>}
+            label={'Email Address'}
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            placeholder="Your email"
             name="email"
             autoComplete="email"
             helperText={touched.email ? errors.email : ''}
@@ -71,18 +73,20 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
           />
 
           <TextField
-            id="username"
-            label={<Typography className={classes.label}>Name</Typography>}
+            id="name"
+            label={'Name'}
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
-            name="username"
-            autoComplete="username"
+            placeholder="Your name"
+            name="name"
+            autoComplete="name"
             autoFocus
             helperText={touched.username ? errors.username : ''}
             error={touched.username && Boolean(errors.username)}
@@ -92,16 +96,18 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
 
           <TextField
             id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
+            label={'Password'}
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
             type="password"
+            placeholder="Create a password"
             autoComplete="current-password"
             helperText={touched.password ? errors.password : ''}
             error={touched.password && Boolean(errors.password)}

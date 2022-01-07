@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
   typography: {
-    fontFamily: '"Arial", "Roboto"',
+    fontFamily: '"Roboto", "Arial"',
     fontSize: 12,
     button: {
       textTransform: 'none',
@@ -17,4 +17,27 @@ export const theme = createTheme({
     borderRadius: 5,
   },
   spacing: 6,
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          border: '1px solid #000',
+          height: 42,
+        },
+        notchedOutline: {
+          display: 'none',
+        },
+      },
+    },
+
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: '#000',
+          fontSize: 14,
+          fontWeight: '700',
+        },
+      },
+    },
+  },
 });
