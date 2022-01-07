@@ -1,6 +1,7 @@
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { Link, TextField } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
 import useStyles from './useStyles';
@@ -50,12 +51,13 @@ export default function Register(): JSX.Element {
           <Box width="100%" maxWidth={450} p={3} alignSelf="center">
             <Grid container>
               <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
-                  Create an account
+                <Typography className={classes.welcome} component="h1" variant="h3">
+                  Sign Up
                 </Typography>
               </Grid>
             </Grid>
             <SignUpForm handleSubmit={handleSubmit} />
+            <Link href="/login">Login</Link>
           </Box>
           <Box p={1} alignSelf="center" />
         </Box>

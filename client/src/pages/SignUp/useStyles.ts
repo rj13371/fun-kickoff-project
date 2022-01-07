@@ -16,10 +16,13 @@ const useStyles = makeStyles(() => ({
     paddingTop: 23,
   },
   welcome: {
-    fontSize: 26,
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    fontSize: 40,
     paddingBottom: 20,
     color: '#000000',
-    fontWeight: 700,
+    fontWeight: 800,
   },
 }));
 
