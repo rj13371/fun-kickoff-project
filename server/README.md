@@ -8,3 +8,4 @@
 5. Run `npm run test` to run the tests
 6. Done!
 ---
+You may need to change the app variable in test/auth.spec.js depending on where your server is hosted on your local machine
