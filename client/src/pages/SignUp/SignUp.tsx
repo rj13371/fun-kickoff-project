@@ -38,12 +38,12 @@ export default function Register(): JSX.Element {
   };
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
+    <Grid container direction="column" spacing={3} justifyContent="center" alignItems="center">
+      <Grid item xs={8} sm={8} md={7} elevation={6} component={Paper} square>
         <Box
           display="flex"
-          justifyContent="space-between"
-          alignItems="flex-start"
+          justifyContent="center"
+          alignItems="center"
           flexDirection="column"
           className={classes.authWrapper}
         >
