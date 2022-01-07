@@ -89,7 +89,6 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
 // @access Private
 exports.loadUser = asyncHandler(async (req, res, next) => {
   const user = await User.findById(req.user.id);
-  console.log(req.user)
 
   if (!user) {
     res.status(401);
