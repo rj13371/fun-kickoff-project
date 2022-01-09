@@ -1,22 +1,15 @@
-const chai = require("chai");
-const chaiHttp = require("chai-http");
-const app = require("../app.js");
+var expect  = require('chai').expect;
+var request = require('request');
 
-chai.should();
-chai.use(chaiHttp);
 
-describe("/POST ping", () => {
-  it("it should return 200 and message", (done) => {
-    chai
-      .request(app)
-      .post(`/ping/`)
-      .send({ message: "hello" })
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.have
-          .property("response")
-          .eql("Server is running. Message received: hello");
-        done();
-      });
+describe("profile GET route", function() {
+
+  var url = "http://localhost:3001/profiles/profiles"
+
+  it("returns status 200", function() {
+    request(url, function(error, response, body) {
+      expect(response.statusCode).to.equal(200);
+    });
   });
+
 });
