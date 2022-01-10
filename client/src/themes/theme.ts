@@ -5,7 +5,7 @@ export const theme = createTheme({
     fontFamily: '"Roboto", "Arial"',
     fontSize: 12,
     button: {
-      textTransform: 'none',
+      textTransform: 'uppercase',
       fontWeight: 900,
       fontSize: 14,
     },
