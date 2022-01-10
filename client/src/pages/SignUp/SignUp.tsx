@@ -1,12 +1,13 @@
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import AuthFooter from '../../components/AuthFooter/AuthFooter';
 import Typography from '@mui/material/Typography';
 import { FormikHelpers } from 'formik';
 import useStyles from './useStyles';
 import register from '../../helpers/APICalls/register';
 import SignUpForm from './SignUpForm/SignUpForm';
-import AuthHeader from '../../components/AuthHeader/AuthHeader';
+import AuthHeader from '../../components/AuthFooter/AuthFooter';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
 
@@ -37,27 +38,28 @@ export default function Register(): JSX.Element {
   };
 
   return (
-    <Grid container component="main" className={classes.root}>
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
+    <Grid maxHeight={500} container direction="column" spacing={3} justifyContent="center" alignItems="center">
+      <Grid item xs={8} sm={8} md={7} elevation={6} component={Paper} square>
         <Box
+          maxHeight={500}
           display="flex"
-          justifyContent="space-between"
-          alignItems="flex-start"
+          justifyContent="center"
+          alignItems="center"
           flexDirection="column"
           className={classes.authWrapper}
         >
-          <AuthHeader linkTo="/login" asideText="Already have an account?" btnText="Login" />
-          <Box width="100%" maxWidth={450} p={3} alignSelf="center">
+          <Box height="100%" maxHeight={500} width="100%" maxWidth={600} p={3} alignSelf="center">
             <Grid container>
               <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
-                  Create an account
+                <Typography className={classes.welcome} component="h1" variant="h3">
+                  Sign Up
                 </Typography>
               </Grid>
             </Grid>
             <SignUpForm handleSubmit={handleSubmit} />
           </Box>
           <Box p={1} alignSelf="center" />
+          <AuthFooter linkTo="/login" asideText="Already a member?" linkText="Login" />
         </Box>
       </Grid>
     </Grid>

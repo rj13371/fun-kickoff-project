@@ -1,31 +1,31 @@
-import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import { Link as LinkComponent } from 'react-router-dom';
 import useStyles from './useStyles';
 
 interface Props {
   linkTo: string;
   asideText: string;
-  btnText: string;
+  linkText: string;
 }
 
-const AuthFooter = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
+const AuthFooter = ({ linkTo, asideText, linkText }: Props): JSX.Element => {
   const classes = useStyles();
 
   return (
     <Box
       p={1}
       display="flex"
-      justifyContent="flex-end"
-      alignSelf="flex-end"
+      justifyContent="center"
+      alignItems="center"
       marginRight={5}
       className={classes.authHeader}
     >
       <Typography className={classes.accAside}>{asideText}</Typography>
-      <Button component={Link} to={linkTo} color="inherit" className={classes.accBtn} variant="contained">
-        {btnText}
-      </Button>
+      <Link component={LinkComponent} to={linkTo} color="inherit" className={classes.linkText}>
+        {linkText}
+      </Link>
     </Box>
   );
 };

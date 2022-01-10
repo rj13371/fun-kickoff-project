@@ -6,7 +6,7 @@ import { FormikHelpers } from 'formik';
 import useStyles from './useStyles';
 import login from '../../helpers/APICalls/login';
 import LoginForm from './LoginForm/LoginForm';
-import AuthHeader from '../../components/AuthHeader/AuthHeader';
+import AuthFooter from '../../components/AuthFooter/AuthFooter';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
 
@@ -36,20 +36,20 @@ export default function Login(): JSX.Element {
   };
 
   return (
-    <Grid container component="main" className={classes.root}>
+    <Grid maxHeight={500} container direction="column" spacing={3} justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
         <Box
+          maxHeight={500}
           display="flex"
-          justifyContent="space-between"
-          alignItems="flex-start"
+          justifyContent="center"
+          alignItems="center"
           flexDirection="column"
           className={classes.authWrapper}
         >
-          <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
-          <Box width="100%" maxWidth={450} p={3} alignSelf="center">
+          <Box height="100%" maxHeight={500} width="100%" maxWidth={600} p={3} alignSelf="center">
             <Grid container>
               <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
+                <Typography className={classes.welcome} component="h1" variant="h3">
                   Welcome back!
                 </Typography>
               </Grid>
@@ -57,6 +57,7 @@ export default function Login(): JSX.Element {
             <LoginForm handleSubmit={handleSubmit} />
           </Box>
           <Box p={1} alignSelf="center" />
+          <AuthFooter linkTo="/signup" asideText="Sign up" linkText="here" />
         </Box>
       </Grid>
     </Grid>
