@@ -1,20 +1,3 @@
-// We would like to create the following controllers for creating, updating or getting profiles. Include the routes for this ticket as well
-
-// - CREATE
-
-// - Given parameters passed in, create a profile.
-
-// - UPDATE
-
-// - Given an ID and new parameters, update the profile
-
-// - GET
-
-// - Given an ID, return profile with that ID
-
-// - GET all
-
-// - A list of profiles
 const Profile = require("../models/Profile");
 const asyncHandler = require("express-async-handler");
 
